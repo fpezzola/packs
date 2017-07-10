@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://service.testprepaidservice.redmondsoftware.com.ar/" name="PrepaidService" targetNamespace="http://service.testprepaidservice.redmondsoftware.com.ar/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.testprepaidservice.redmondsoftware.com.ar/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service.testprepaidservice.redmondsoftware.com.ar/">
+  <xs:element name="deleteBoltonResponse" type="tns:deleteBoltonResponse"/>
+  <xs:element name="getPlanForUserResponse" type="tns:getPlanForUserResponse"/>
+  <xs:element name="purchaseBoltonResponse" type="tns:purchaseBoltonResponse"/>
+  <xs:complexType name="boltonOperationRequest">
+    <xs:sequence>
+      <xs:element name="phoneNumber" type="xs:long"/>
+      <xs:element name="boltonCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteBoltonResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="result" type="tns:operationResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="operationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorCode" type="xs:int"/>
+      <xs:element minOccurs="0" name="errorDescription" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="userOperationRequest">
+    <xs:sequence>
+      <xs:element name="phoneNumber" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPlanForUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="plan" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="purchaseBoltonResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="result" type="tns:operationResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="deleteBoltonRequest" nillable="true" type="tns:boltonOperationRequest"/>
+  <xs:element name="getPlanForUserRequest" nillable="true" type="tns:userOperationRequest"/>
+  <xs:element name="purchaseBoltonRequest" nillable="true" type="tns:boltonOperationRequest"/>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="purchaseBoltonResponse">
+    <wsdl:part element="ns1:purchaseBoltonResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteBolton">
+    <wsdl:part element="ns1:deleteBoltonRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPlanForUser">
+    <wsdl:part element="ns1:getPlanForUserRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPlanForUserResponse">
+    <wsdl:part element="ns1:getPlanForUserResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteBoltonResponse">
+    <wsdl:part element="ns1:deleteBoltonResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="purchaseBolton">
+    <wsdl:part element="ns1:purchaseBoltonRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PrepaidService">
+    <wsdl:operation name="deleteBolton">
+      <wsdl:input message="ns1:deleteBolton" name="deleteBolton">
+    </wsdl:input>
+      <wsdl:output message="ns1:deleteBoltonResponse" name="deleteBoltonResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlanForUser">
+      <wsdl:input message="ns1:getPlanForUser" name="getPlanForUser">
+    </wsdl:input>
+      <wsdl:output message="ns1:getPlanForUserResponse" name="getPlanForUserResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="purchaseBolton">
+      <wsdl:input message="ns1:purchaseBolton" name="purchaseBolton">
+    </wsdl:input>
+      <wsdl:output message="ns1:purchaseBoltonResponse" name="purchaseBoltonResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
