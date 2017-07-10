@@ -13,6 +13,11 @@ import com.app.packs.enums.EVigencia;
 public class PackSemanal extends Pack{
 	
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * Da la fecha de venicmineto de ahora a 7 dias.
 	 */
 	@Override

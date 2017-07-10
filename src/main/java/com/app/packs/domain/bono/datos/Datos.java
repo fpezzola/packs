@@ -10,4 +10,9 @@ import com.app.packs.enums.ETipoTrafico;
 @DiscriminatorValue(value=ETipoTrafico.Values.DATOS)
 public class Datos extends Bono {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 }

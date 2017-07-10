@@ -13,6 +13,11 @@ import com.app.packs.enums.EVigencia;
 public class PackDiario extends Pack{
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * Da la fecha de venicmineto de ahora a mañana.
 	 */
 	@Override
